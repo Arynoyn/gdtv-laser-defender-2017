@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Fire() {
         var beam = Instantiate( Projectile, transform.position, Quaternion.identity ) as GameObject;
-        if (beam != null) { beam.rigidbody2D.velocity = new Vector3( 0, ProjectileSpeed, 0 ); }
+        if (beam != null) { beam.GetComponent<Rigidbody2D>().velocity = new Vector3( 0, ProjectileSpeed, 0 ); }
         AudioSource.PlayClipAtPoint(FireSound, transform.position);
     }
 
